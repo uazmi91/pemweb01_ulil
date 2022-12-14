@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Dom JS</title>
+</head>
+<body>
+    <h1>Belajar edit element</h1>
+
+    <div id="box1">
+        <div id="p1">Paragraf 1</div>
+    </div>
+
+    <script>
+        // buat element baru
+        let el = document.createElement("h2");
+        // tambahan kalimamt atau text menggunakan fungsi createtext
+        let text = document.createTextNode("Belajar web");
+        // ambil id div parent menggunakan getelementbyid
+        let box = document.getElementById("box1");
+
+        // tambahan element h2 ke dalam element div box
+        // mengunakan method appendchild
+        el.appendChild(text);
+        box.appendChild(el);
+
+        // edit element menggunakan replace child
+        // buat element new
+        let el2 = document.createElement("h2");
+        // tambahan kalimat 
+        let text2 = document.createTextNode("belajar web");
+
+        // masukan element 
+        el2.appendChild(text2);
+
+        // 
+        let p1 = document.getElementById("p1");
+        // 
+        box.replaceChild(el2,p1);
+        // 
+        box.removeChild(el);
+    </script>
+</body>
+</html>
