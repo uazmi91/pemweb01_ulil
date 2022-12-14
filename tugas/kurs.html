@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hitung Kurs</title>
+  </head>
+  <body>
+    <table border="1" align="center" cellpadding="10">
+      <tr>
+        <td>Masukkan Nilai</td>
+        <td>Valas</td>
+        <td>Nilai Rupiah</td>
+      </tr>
+      <tr>
+        <td><input type="number" id="nilai" onchange="hitung()" /></td>
+        <td>
+          <select id="kurs">
+            <option value="usd">Dollar US</option>
+            <option value="sgd">Dollar Singapura</option>
+            <option value="myr">Ringgit Malaysia</option>
+            <option value="jpy">Yen Jepang</option>
+            <option value="eur">Euro</option>
+            <option value="sar">Riyal Arab Saudi</option>
+          </select>
+        </td>
+        <td><h4 id="hasil">Hasil</h4></td>
+      </tr>
+      <tr>
+        <td colspan="3" style="text-align: center">Tekan Enter untuk Menghitung</td>
+      </tr>
+    </table>
+
+    <script>
+      const input = document.getElementById('nilai');
+      const kurs = document.getElementById('kurs');
+      const hasil = document.getElementById('hasil');
+
+      function hitung() {
+        if (kurs.value == 'usd') {
+          hasil.innerHTML = 'Rp. ' + input.value * 9915;
+        } else if (kurs.value == 'sgd') {
+          hasil.innerHTML = 'Rp. ' + input.value * 13472;
+        } else if (kurs.value == 'myr') {
+          hasil.innerHTML = 'Rp. ' + input.value * 874;
+        } else if (kurs.value == 'jpy') {
+          hasil.innerHTML = 'Rp. ' + input.value * 120;
+        } else if (kurs.value == 'eur') {
+          hasil.innerHTML = 'Rp. ' + input.value * 15888;
+        } else {
+          hasil.innerHTML = 'Rp. ' + input.value * 3592;
+        }
+      }
+    </script>
+  </body>
+</html>

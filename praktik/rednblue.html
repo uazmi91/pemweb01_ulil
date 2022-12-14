@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      .blue {
+        background: blue;
+        color: yellow;
+      }
+      .red {
+        background: red;
+        color: white;
+      }
+    </style>
+
+    <title>Red n Blue</title>
+  </head>
+  <body>
+    <span id="nf" class="blue">Nurul Fikri</span>
+    <button onclick="ubah()">ubah</button>
+
+    <script>
+      function ubah() {
+        let obj = document.getElementById('nf');
+        console.log(obj.className == 'blue');
+        if (obj.className == 'blue') {
+          obj.className = 'red';
+        } else {
+          obj.className = 'blue';
+        }
+      }
+    </script>
+  </body>
+</html>
